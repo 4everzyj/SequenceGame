@@ -3,11 +3,12 @@ const express = require('express');
 const app = express();
 app.use(express.static('./public'));
 
-const https = require('https');
-const server = https.createServer({
-	cert: fs.readFileSync('/home/pi/amber-certs/fullchain.pem'),
-	key: fs.readFileSync('/home/pi/amber-certs/privkey.pem'),
-}, app);
+var server = require('http').Server(app);
+// const https = require('https');
+// const server = https.createServer({
+// 	cert: fs.readFileSync('/home/pi/amber-certs/fullchain.pem'),
+// 	key: fs.readFileSync('/home/pi/amber-certs/privkey.pem'),
+// }, app);
 
 var port = 61000;
 
